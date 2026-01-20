@@ -8,11 +8,25 @@ function Sidebar() {
 
   return (
     <>
-        <aside className={`bg-amber-300 w-17 flex flex-col justify-between items-center h-screen ${state ? "open" : "notOpen" }`}>
+        <aside className={` w-17 h-screen transition-all duration-300 ${state ? "open" : "notOpen" }`}>
             <img src={assets.menu_icon} alt={assets.menu_icon} 
-                className='h-5 w-5 mt-3'
+                className='img h-5 w-5'
+                title="menu"
                 onClick={()=> setState(prev => !prev)}
             />
+
+
+            <div className={`newChate ${state ? "open" : "notopen" }`}>
+            <img src={assets.message_icon} alt={assets.message_icon} 
+                className={`h-6 w-6 message `}
+                title="chate"
+            />
+            <p>New Chate</p>
+            </div>
+            <div className={`chats ${state ? "open" : "notopen" }`}>
+            <p>Chats</p>
+
+            </div>
         </aside>
     </>
   )

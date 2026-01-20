@@ -1,6 +1,7 @@
 nav {
   padding-left: 1vw;
   padding-right: 1vw;
+  background-color: #ffffff;
 }
 nav.open {
   width: 80vw;
@@ -11,6 +12,7 @@ nav.notOpen {
 
 .hero {
   padding: 1vw;
+  background-color: #ffffff;
   padding-top: 5vw;
 }
 .hero.open {
@@ -19,7 +21,34 @@ nav.notOpen {
 .hero.notOpen {
   width: 95vw;
 }
-
+aside {
+    background-color: #e9eef6;
+}
 aside.open{
     width: 23vw;
+}
+aside .img {
+    position: fixed;
+    top: 1.7vw;
+    left: 1.5vw; cursor: pointer;
+}
+aside .message {
+    top: 5.7vw;
+}
+
+aside .newChate,.chats {
+    width: 100%;
+    position: relative;
+    top: 5.7vw;
+    display: flex;
+    justify-content:start;
+    align-items: center; padding: 1vw 1.4vw;
+    gap: .5vw;
+}
+aside .newChate.notopen{
+    display: none;
+}
+
+aside .chats{
+    top: 4.5vw;
 }
