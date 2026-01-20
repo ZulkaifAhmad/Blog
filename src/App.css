@@ -1,0 +1,25 @@
+nav {
+  padding-left: 1vw;
+  padding-right: 1vw;
+}
+nav.open {
+  width: 80vw;
+}
+nav.notOpen {
+  width: 95vw;
+}
+
+.hero {
+  padding: 1vw;
+  padding-top: 5vw;
+}
+.hero.open {
+  width: 80vw;
+}
+.hero.notOpen {
+  width: 95vw;
+}
+
+aside.open{
+    width: 23vw;
+}
