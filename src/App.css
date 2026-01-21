@@ -1,10 +1,18 @@
+.parent{
+  width: 100vw;
+  box-sizing: border-box;
+}
+
 nav {
   padding-left: 1vw;
   padding-right: 1vw;
   background-color: #ffffff;
+
+  transition: width 0.3s ease-in-out;
 }
+
 nav.open {
-  width: 80vw;
+  width: 77vw;
 }
 nav.notOpen {
   width: 95vw;
@@ -14,15 +22,18 @@ nav.notOpen {
   padding: 1vw;
   background-color: #ffffff;
   padding-top: 5vw;
+  width: 20vw;
+    transition: width 0.3s ease-in-out;
 }
 .hero.open {
-  width: 80vw;
+  width: 77vw !important;
 }
 .hero.notOpen {
   width: 95vw;
 }
 aside {
     background-color: #e9eef6;
+    transition: width 0.3s ease-in-out;
 }
 aside.open{
     width: 23vw;
@@ -36,19 +47,102 @@ aside .message {
     top: 5.7vw;
 }
 
+
+
 aside .newChate,.chats {
     width: 100%;
     position: relative;
-    top: 5.7vw;
+    top: 3.7vw;
     display: flex;
     justify-content:start;
     align-items: center; padding: 1vw 1.4vw;
     gap: .5vw;
 }
+.newChate div{
+  display: flex;
+  position: relative;
+  right: 1vw;
+  gap: .5vw;
+  justify-content: start;
+  padding: 1vw 1vw;
+}
+.newChate div:hover{
+  background-color: rgba(128, 128, 128, 0.13);
+  cursor: pointer;
+  border-radius: 3vw;
+  width: 90%;
+}
+
 aside .newChate.notopen{
     display: none;
 }
-
+.newChate .newchate {
+  font-size: 1.1vw;
+  padding-top: .2vw;
+  font-weight: 500;
+}
 aside .chats{
-    top: 4.5vw;
+    top: 2.5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    width: 100%;
+    box-sizing: border-box;
+}
+.chats #history{
+  width: 100%;
+  position: relative;
+  right: 1vw;
+  box-sizing: border-box;
+  /* background-color: lightcoral; */
+  height: 60vh;
+  overflow:auto;
+  scrollbar-width: thin;          /* Options: auto, thin, none */
+  scrollbar-color: lightcoral transparent;
+}
+#history p {
+  width: 100%;
+  
+  padding: .6vw 1vw;
+  border-radius: 3vw;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 15px;
+}
+#history p:hover {
+  color: rgba(0, 0, 255, 0.821);
+  background-color: rgba(128, 128, 128, 0.13) ;
+}
+.chats #headOfChats{
+  font-size: 1vw;
+  font-weight: 500;
+}
+aside .chats.notopen {
+  display: none;
+}
+.setting{
+  width: 100%;
+  padding: 1vw;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-top: 3vw;
+  gap: .7vw;
+}
+.setting:hover{
+  background-color:  rgba(128, 128, 128, 0.13);
+  cursor: pointer;
+}
+.setting img{
+  height: 1.7vw;
+  width: 1.7vw;
+  object-fit: cover;
+}
+.setting p{
+  font-size: 1.1vw;
+  font-weight: 500;
+}
+.setting.notOpen{
+  display: none;
 }

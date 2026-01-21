@@ -6,7 +6,7 @@ import Hero from "./components/Hero";
 function App() {
   return (
     <>
-      <div className="flex box-border">
+      <div className="parent box-border flex bg-amber-300 overflow-hidden">
       <Sidebar />
       <div>
         <Navbar />
