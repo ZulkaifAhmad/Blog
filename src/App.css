@@ -295,3 +295,23 @@ aside .chats.notopen {
   overflow: auto;
 }
 
+
+.chat-display{
+  height: 400px; 
+  overflow-y: auto; 
+  padding: 20px; 
+  display: flex; 
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+#display {
+  color: white;
+  padding: 10px 15px;
+  border-radius: 15px;
+  max-width: 100%;
+}
+#thinking{
+  color: #888;
+  font-size: 14px;
+}

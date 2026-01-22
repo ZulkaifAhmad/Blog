@@ -1,10 +1,8 @@
-
-
 import { useState } from "react";
 import { GoogleGenAI } from "@google/genai";
 
 const ai = new GoogleGenAI({
-  apiKey: "AIzaSyDqaXxYhtjBmkhxJqcsOm45EkeiV7Tnra4"
+  apiKey: import.meta.env.VITE_GEMINI_API_KEY
 });
 
 function useGemini() {
@@ -21,10 +19,10 @@ function useGemini() {
     try {
       const result = await ai.models.generateContent({
         model: "gemini-3-flash-preview",
-        contents: prompt,
+        contents: prompt
       });
 
-      setResponse(result.text);
+      setResponse(result.response.text());
     } catch (err) {
       setError("Failed to generate response");
     } finally {
@@ -32,12 +30,7 @@ function useGemini() {
     }
   }
 
-  return {
-    generateText,
-    response,
-    loading,
-    error
-  };
+  return { generateText, response, loading, error };
 }
 
 export default useGemini;
