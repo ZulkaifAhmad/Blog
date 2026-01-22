@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 
 const UserContext = createContext();
 
@@ -7,13 +7,28 @@ export const userContext = () => {
 };
 
 function Context({ children }) {
-  const [StoreData, setStoreData] = useState([]);
-
   const [state, setState] = useState(false);
+  const [showRecentChats, setShowRecentChats] = useState({state : false, id: null});
+  const [recentChats, setRecentChats] = useState(() => {
+    const saved = localStorage.getItem("gemini_recent_chats");
+    return saved ? JSON.parse(saved) : [];
+  });
+
+  // 2. Save to LocalStorage whenever recentChats is updated
+  useEffect(() => {
+    localStorage.setItem("gemini_recent_chats", JSON.stringify(recentChats));
+  }, [recentChats]);
 
   return (
     <UserContext.Provider
-      value={{ state, setState }}
+      value={{ 
+        state, 
+        setState, 
+        recentChats, 
+        setRecentChats ,
+        showRecentChats, 
+        setShowRecentChats
+      }}
     >
       {children}
     </UserContext.Provider>
